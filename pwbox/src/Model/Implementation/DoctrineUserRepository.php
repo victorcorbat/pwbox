@@ -57,7 +57,7 @@ class DoctrineUserRepository implements UserRepository
             $user = $stmt->fetchAll()[0];
             $id_user = $user['LAST_INSERT_ID()'];
 
-            $sql = "INSERT INTO folder(name, isroot, fk_parent) VALUES ('rootfolder', true, 0)";
+            $sql = "INSERT INTO folder(name, isroot, fk_parent, cadena) VALUES ('rootfolder', true, 0, '')";
             $stmt = $this->connection->prepare($sql);
             $stmt->execute();
 
@@ -168,11 +168,20 @@ class DoctrineUserRepository implements UserRepository
     public function addFolder($data){
         $name = $data["name"];
         $folder = $data["folder"];
+        $sql = "SELECT cadena FROM folder WHERE id=:folder";
+        $stmt = $this->connection->prepare($sql);
+        $stmt->bindValue("folder", $folder, 'integer');
+        $stmt->execute();
+        $aux = $stmt->fetch();
+        $cadena = $aux['cadena'];
+        $cadena = $cadena."-".$folder;
 
-        $sql = "INSERT INTO folder(name, isroot, fk_parent) values(:name, false, :fk_parent)";
+        $sql = "INSERT INTO folder(name, isroot, fk_parent, creator, cadena) values(:name, false, :fk_parent, :creator, :cadena)";
         $stmt = $this->connection->prepare($sql);
         $stmt->bindValue("name", $name, 'string');
         $stmt->bindValue("fk_parent", $folder, 'integer');
+        $stmt->bindValue("creator", $_SESSION['id'], 'integer');
+        $stmt->bindValue("cadena", $cadena, 'string');
         $stmt->execute();
     }
 
@@ -304,5 +313,36 @@ class DoctrineUserRepository implements UserRepository
         $stmt->bindValue("size", $file->getSize(), 'float');
         $stmt->bindValue("extension", $file->getExtension(), 'string');
         $stmt->execute();
+    }
+
+    public function getCreator($data){
+        $sql = "select creator from folder where id= :id";
+        $stmt = $this->connection->prepare($sql);
+        $stmt->bindValue("id", $data['id'], 'string');
+        $stmt->execute();
+        $folder = $stmt->fetch();
+        return $folder["creator"];
+    }
+
+    public function getChain($data){
+        $sql = "select cadena from folder where id= :id";
+        $stmt = $this->connection->prepare($sql);
+        $stmt->bindValue("id", $data['id'], 'string');
+        $stmt->execute();
+        $folder = $stmt->fetch();
+        return $folder["cadena"];
+    }
+
+    public function isAccessible($data){
+        $sql = "SELECT * FROM shared_folders WHERE fk_folder =:fk_folder AND fk_user =:fk_user";
+        $stmt = $this->connection->prepare($sql);
+        $stmt->bindValue("fk_folder", $data['folder_id'], 'integer');
+        $stmt->bindValue("fk_user", $data['user_id'], 'integer');
+        $stmt->execute();
+        $count = $stmt->fetchColumn(0);
+        if($count>0){
+            return true;
+        }
+        return false;
     }
 }

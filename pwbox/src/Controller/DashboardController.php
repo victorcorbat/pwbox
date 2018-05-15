@@ -30,17 +30,32 @@ class DashboardController
         $menu['dashboard']=true;
         $menu['profile']=false;
         $menu['shared']=false;
+        $mensaje_error = false;
 
-        if(isset($args["folder_id"])){
+        if(isset($args["folder_id"]) && isset($_SESSION["id"])){
             $data["id"] = $args["folder_id"];
             $id = $data["id"];
-            $service = $this->container->get('folders_inside_service');
-            $folders = $service($data);
-            $service = $this->container->get('files_inside_service');
-            $files = $service($data);
-            return $this->container->get('view')
-                ->render($response, 'dashboard.twig', ['folders'=>$folders, 'id'=>$id, 'files'=>$files, 'menu'=>$menu]);
-        }else{
+            $service = $this->container->get('creator_service');
+            $creator = $service($data);
+            if($creator == $_SESSION['id']){
+                $data["id"] = $args["folder_id"];
+                //mirar si al root puedo acceder
+                $service = $this->container->get('folders_inside_service');
+                $folders = $service($data);
+                $service = $this->container->get('files_inside_service');
+                $files = $service($data);
+                return $this->container->get('view')
+                    ->render($response, 'dashboard.twig', ['folders'=>$folders, 'id'=>$id, 'files'=>$files, 'menu'=>$menu, 'mensaje_error'=>$mensaje_error]);
+            }
+            else{
+                $mensaje_error = true;
+            }
+            //get creator id!
+            //comparar el id con el del creador
+            //mirar si es igual al del session. si lo son acceder.
+
+        }
+        if(isset($_SESSION["id"])){
             $id = $_SESSION["id"];
             $data["id"]=$id;
             //hay que obtener todos las carpetas y los archivos
@@ -54,8 +69,12 @@ class DashboardController
             $files = $service($data);
 
             return $this->container->get('view')
-                ->render($response, 'dashboard.twig', ['folders'=>$folders, 'id'=>$id, 'files'=>$files, 'menu'=>$menu]); //obtener todas las carpetas compartidas y las que están dentro de la root.
+                ->render($response, 'dashboard.twig', ['folders'=>$folders, 'id'=>$id, 'files'=>$files, 'menu'=>$menu, 'mensaje_error'=>$mensaje_error]); //obtener todas las carpetas compar
         }
+
+        return $this->container->get('view')
+            ->render($response, 'login.twig');
+        // return con el ninguna de las 2--> estan intentando acceder desde la barra
     }
 }
 

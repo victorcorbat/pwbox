@@ -167,6 +167,28 @@ $container['share_service'] = function($container){
     return $useCase;
 };
 
+$container['creator_service'] = function($container){
+    $useCase = new pwbox\Model\UseCase\CreatorService(
+        $container->get('user_repository') //repositorio
+    );
+    return $useCase;
+};
+
+$container['chain_service'] = function($container){
+    $useCase = new pwbox\Model\UseCase\ChainService(
+        $container->get('user_repository') //repositorio
+    );
+    return $useCase;
+};
+
+$container['accessible_service'] = function($container){
+    $useCase = new pwbox\Model\UseCase\AccessibleService(
+        $container->get('user_repository') //repositorio
+    );
+    return $useCase;
+};
+
+
 $container['flash'] = function($container){
     return new \Slim\Flash\Messages();
 };
