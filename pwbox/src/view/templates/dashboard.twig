@@ -1,0 +1,231 @@
+{%  extends 'navbar.twig' %}
+
+{%  block content %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ base_url() }}/assets/css/styles_dash.css">
+    <script src="modals.js"></script>
+
+    <div id="content-dash">
+
+        {% if menu['shared']==false %}
+
+            <div id="buttons">
+                <button class="btn btn-primary" data-toggle="modal" data-target="#addFolder">Añadir carpeta</button>
+                <button class="btn btn-primary" data-toggle="modal" data-target="#addFile">Subir archivo</button>
+                <button class="btn btn-primary" data-toggle="modal" data-target="#shareFolder">Compartir carpeta</button>
+            </div>
+        {% endif %}
+
+        {% if success is defined %}
+
+            {% if success==false %}
+
+                <script>alert('El email introducido no existe!')</script>
+
+            {% else %}
+                <script>alert('Carpeta compartida con éxito!')</script>
+            {% endif %}
+
+        {% endif %}
+
+        {% if error != '' %}
+            <script>alert("{{ error }}")</script>
+        {% endif %}
+
+        {% if folder is defined %}
+            <a href = {{ "/dashboard/" ~ folder["id"] }}> {{ folder["name"] }}</a>
+        {% endif %}
+
+        {% if folders is defined %}
+            <div id="folder-div">
+            {% for folder in folders %}
+                <div>
+                    <img src="http://icons.iconarchive.com/icons/avosoft/warm-toolbar/128/folder-open-icon.png">
+                    {% if menu['shared']==true %}
+                        <a href = {{ "/shared/" ~ folder['id'] }}> {{ folder["name"] }}</a>
+                    {% endif %}
+                    {% if menu['dashboard']==true %}
+                        <a href = {{ "/dashboard/" ~ folder['id'] }}> {{ folder["name"] }}</a>
+                    {% endif %}
+                    {% if menu['shared']==false %}
+                        <div class="modal fade" id={{ "removeFolder" ~ folder['id'] }} role="dialog">
+                            <div class="modal-dialog">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Eliminar carpeta</h4>
+                                    </div>
+                                    <form action={{ "/remove_folder/" ~ folder['id'] }} class="form-inline" method="post">
+                                        <div class="modal-body">
+                                            <p>¿Estás seguro de que deseas eliminar la carpeta?</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button class="btn btn-primary" type="submit">Eliminar</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="opciones" data-toggle="modal" data-target={{ "#removeFolder" ~ folder['id'] }}>Eliminar</button>
+
+                        <div class="modal fade" id={{ "renameFolder" ~ folder['id'] }} role="dialog">
+                            <div class="modal-dialog">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Renombrar carpeta</h4>
+                                    </div>
+                                    <form id="renameform" action={{ "/rename/"~ folder['id'] }} class="form-inline" method="post">
+                                        <div class="modal-body">
+                                            <label class="sr-only" for="nombre">Nombre:</label>
+                                            <input class="form-control" id="nombre" name="nombre" type="text" value="{{ folder['name'] }}">
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button class="btn btn-primary" type="submit">Renombrar</button>
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                        <button class="opciones" data-toggle="modal" data-target={{ "#renameFolder" ~ folder['id'] }}>Renombrar</button>
+                    {% endif %}
+                </div>
+                <br>
+            {% endfor %}
+            </div>
+        {% endif %}
+
+        {% if files is defined %}
+            <div id="folder-div">
+                {% for file in files %}
+                    <div>
+                        <img src="http://icons.iconarchive.com/icons/zhoolego/material/512/Filetype-Docs-icon.png">
+                        <a href = {{ "/download/" ~ file['id'] ~ '.' ~ file['extension'] }}> {{ file["name"] }}</a>
+                        {% if menu['shared']==false %}
+                            <div class="modal fade" id={{ "removeFile" ~ file['id'] }} role="dialog">
+                                <div class="modal-dialog">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Eliminar archivo</h4>
+                                        </div>
+                                        <form action={{ "/remove_file/" ~ file['id'] }} class="form-inline" method="post">
+                                            <div class="modal-body">
+                                                <p>¿Estás seguro que deseas eliminar el archivo?</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button class="btn btn-primary" type="submit">Eliminar</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="opciones" data-toggle="modal" data-target={{ "#removeFile" ~ file['id'] }}>Eliminar</button>
+
+                            <div class="modal fade" id={{ "renameFile" ~ file['id'] }} role="dialog">
+                                <div class="modal-dialog">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Renombrar archivo</h4>
+                                        </div>
+                                        <form id="renameform" action={{ "/rename_file/" ~ file['id'] }} class="form-inline" method="post">
+                                            <div class="modal-body">
+                                                <label class="sr-only" for="nombre">Nombre:</label>
+                                                <input class="form-control" id="nombre" name="nombre" type="text" value="{{ file['name'] }}">
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button class="btn btn-primary" type="submit">Renombrar</button>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <button class="opciones" data-toggle="modal" data-target={{ "#renameFile" ~ file['id'] }}>Renombrar</button>
+                        {% endif %}
+                    </div>
+                    <br>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <!-- Modal -->
+        <div class="modal fade" id="addFolder" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Añadir carpeta</h4>
+                    </div>
+                    <form action={{ "/crear/" ~ id }} class="form-inline" method="post">
+                        <div class="modal-body">
+                            <label class="sr-only" for="nombre">Nombre:</label>
+                            <input class="form-control" id="nombre" name="nombre" type="text" placeholder="Nombre">
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary" type="submit">Crear</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="shareFolder" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Compartir carpeta</h4>
+                    </div>
+                    <form action={{ "/share/" ~ id }} class="form-inline" method="post">
+                        <div class="modal-body">
+                            <label class="sr-only" for="nombre">Email del usuario:</label>
+                            <input class="form-control" id="nombre" name="email" type="text" placeholder="Email">
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary" type="submit">Compartir</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="addFile" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Subir archivo</h4>
+                    </div>
+
+                    <form method="post" action={{ "/upload/" ~ id }}  enctype="multipart/form-data">
+                        <!-- upload of a single file -->
+                        <p>
+                            <label>Add file (single): </label><br/>
+                            <input type="file" name="file"/>
+                        </p>
+
+                        <p>
+                            <input type="submit"/>
+                        </p>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+{% endblock %}

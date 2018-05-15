@@ -1,0 +1,38 @@
+{%  extends 'base.twig' %}
+{%  block content %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ base_url() }}/assets/css/styles.css">
+    <div class="container">
+        <h3 id="login">Iniciar sesión</h3>
+        <form action="/" class="form-inline" method="post">
+            <div class="form-group">
+                <div class="input-group">
+                    <label class="sr-only" for="username">Nombre de usuario:</label>
+                    <input class="form-control" id="username" name="username" type="text" placeholder="Nombre de usuario">
+                </div>
+            </div>
+            <br>
+
+            <div class="form-group">
+                <div class="input-group">
+                    <label class="sr-only" for="nombre">Contraseña:</label>
+                    <input class="form-control" id="nombre" name="password" type="password" placeholder="Contraseña">
+                </div>
+            </div>
+            <br>
+            {% if error is defined %}
+                <p>{{ error }}</p>
+            {% endif %}
+
+            <br>
+
+            <button class="btn btn-primary">Enviar</button>
+
+        </form>
+
+        <form class="register" action="/register" method="get">
+            <a href = "/register" type="submit" name="register">¿No tienes cuenta? Regístrate</a>
+        </form>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,58 @@
+
+.container{
+    margin: auto;
+    margin-top: 7%;
+    width: 35%;
+    padding: 10px;
+    padding-bottom:15px;
+    border:1px solid black;
+    background-color:rgb(255, 255, 255)
+}
+
+#update{
+    margin-top: 5%;
+}
+
+.form-group, .input-group{
+    width: 80%;
+}
+
+.form-inline{
+    margin-bottom: 10%;
+}
+
+#form-remove{
+    margin-bottom: 0%;
+}
+
+#login{
+    margin-bottom:10%;
+    font-weight: bold;
+}
+
+*{
+    font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif;
+}
+
+
+#login, form {
+    text-align: center;
+}
+
+body{
+    background-image: url("http://www.wallpapereast.com/static/images/cool-wallpaper-hd-London-eye.jpg");
+    background-size: 100% auto;
+}
+
+#update_pass{
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+p{
+    color:red;
+}
+
+#mensaje{
+    color:black;
+}

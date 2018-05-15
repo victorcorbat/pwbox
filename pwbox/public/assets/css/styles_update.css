@@ -1,0 +1,9 @@
+
+body{
+    background-image: url("http://intrewallpaper.com/wp-content/uploads/pier_vintage-wallpaper-1920x1080.jpg");
+    background-size: 100% auto;
+}
+
+#buttonBorrar{
+    float:right;
+}

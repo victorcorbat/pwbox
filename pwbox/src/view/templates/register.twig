@@ -1,0 +1,106 @@
+{%  extends 'base.twig' %}
+{%  block content %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ base_url() }}/assets/css/styles.css">
+    <link rel="stylesheet" href="{{ base_url() }}/assets/css/styles_register.css">
+
+    <div class="container">
+        <h3 id="login">Regístrate</h3>
+        <form action="/register" class="form-inline" method="post">
+            <div class="form-group">
+                <div class="input-group">
+                    <label class="sr-only" for="username">Nombre de usuario:</label>
+                    {% if data['username'] is defined %}
+                        <input class="form-control" name="username" id="username" type="text" value={{ data['username'] }}>
+                    {% else %}
+                        <input class="form-control" name="username" id="username" type="text" placeholder="Nombre de usuario">
+                    {% endif %}
+                </div>
+            </div>
+            <br>
+            {% if errors["username"] is defined %}
+                <p>{{ errors["username"] }}</p>
+            {% endif %}
+
+            <div class="form-group">
+                <div class="input-group">
+                    <label class="sr-only" for="correo">Correo:</label>
+                    {% if data['email'] is defined %}
+                        <input class="form-control" name="email" id="email" type="email" value={{ data['email'] }}>
+                    {% else %}
+                        <input class="form-control" name="email" id="email" type="email" placeholder="Correo electrónico">
+                    {% endif %}
+                </div>
+            </div>
+            <br>
+
+            {% if errors["email"] is defined %}
+                <p>{{ errors["email"] }}</p>
+            {% endif %}
+
+            <div class="form-group">
+                <div class="input-group">
+                    <label class="sr-only" for="correo">Fecha de nacimiento:</label>
+                    {% if data['birthdate'] is defined %}
+                        <input class="form-control" name="birthdate" id="birthdate" type="text" value={{ data['birthdate'] }}>
+                    {% else %}
+                        <input class="form-control" name="birthdate" id="birthdate" type="text" placeholder="Fecha de nacimiento AAAA-MM-DD">
+                    {% endif %}
+                </div>
+            </div>
+            <br>
+
+            {% if errors["birthdate"] is defined %}
+                <p>{{ errors["birthdate"] }}</p>
+            {% endif %}
+
+            <div class="form-group">
+                <div class="input-group">
+                    <label class="sr-only" for="nombre">Contraseña:</label>
+                    <input class="form-control" id="password" name="password" type="password" placeholder="Contraseña">
+                </div>
+            </div>
+            <br>
+
+            {% if errors["password"] is defined %}
+                <p>{{ errors["password"] }}</p>
+            {% endif %}
+
+            <div class="form-group">
+                <div class="input-group">
+                    <label class="sr-only" for="nombre">Confirmar contraseña:</label>
+                    <input class="form-control" name="confirm_password" type="password" placeholder="Confirma contraseña">
+                </div>
+            </div>
+            <br>
+
+            {% if errors["passwords"] is defined %}
+                <p>{{ errors["passwords"] }}</p>
+            {% endif %}
+
+            {% if errors["fields"] is defined %}
+                <p>{{ errors["fields"] }}</p>
+            {% endif %}
+
+            {% if exists is defined %}
+                {% if exists==false %}
+                    <p>{{ 'El usuario o email ya están registrados' }}</p>
+                {% endif %}
+            {% endif %}
+
+            <br>
+
+            <button class="btn btn-primary">Enviar</button>
+
+        </form>
+    </div>
+
+{% if error %}
+    {{ error }}
+{% endif %}
+
+{% for message in messages %}
+    <p>{{ message }}</p>
+{% endfor %}
+{% endblock %}
+
