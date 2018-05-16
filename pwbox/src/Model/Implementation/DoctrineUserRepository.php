@@ -384,4 +384,24 @@ class DoctrineUserRepository implements UserRepository
         $file = $stmt->fetch();
         return $file["creator"];
     }
+
+    public function updateStorage($data){
+        $sql = "SELECT capacity FROM user WHERE id=:id";
+        $stmt = $this->connection->prepare($sql);
+        $stmt->bindValue("id", $data['id_user'], 'integer');
+        $stmt->execute();
+        $user = $stmt->fetch();
+        $capacity = $user["capacity"];
+        $total = $capacity + $data['size'];
+        if($total>1e9){
+            return false;
+        }
+        $sql = "UPDATE user SET capacity = :total WHERE id= :id";
+        $stmt = $this->connection->prepare($sql);
+        $stmt->bindValue("total", $total, 'float');
+        $stmt->bindValue("id", $_SESSION['id'], 'integer');
+        $stmt->execute();
+
+        return true;
+    }
 }

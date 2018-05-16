@@ -75,14 +75,19 @@ class UploadController
             }
             else{
                 $uploadedFile->moveTo($directory . DIRECTORY_SEPARATOR . $filename);
-
-                $data['basename'] = $basename;
-                $data['filename'] = $uploadedFile->getClientFilename();
-                $data['extension'] = $extension;
-                $data['folder'] = $folder;
+                $data['id_user']=$_SESSION['id'];
                 $data['size']=$uploadedFile->getSize();
-                $service = $this->container->get('upload_service');
-                $service($data);
+                $service = $this->container->get('update_storage_service');
+                $storage = $service($data);
+                if($storage==true){
+                    $data['basename'] = $basename;
+                    $data['filename'] = $uploadedFile->getClientFilename();
+                    $data['extension'] = $extension;
+                    $data['folder'] = $folder;
+                    $data['size']=$uploadedFile->getSize();
+                    $service = $this->container->get('upload_service');
+                    $service($data);
+                }
             }
         }
 

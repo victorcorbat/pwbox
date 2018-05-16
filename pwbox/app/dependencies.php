@@ -139,6 +139,13 @@ $container['get_folder_service'] = function($container){
     return $useCase;
 };
 
+$container['update_storage_service'] = function($container){
+    $useCase = new pwbox\Model\UseCase\UpdateStorageService(
+        $container->get('user_repository') //repositorio
+    );
+    return $useCase;
+};
+
 $container['shared_folder_service'] = function($container){
     $useCase = new pwbox\Model\UseCase\SharedFolderService(
         $container->get('user_repository') //repositorio
