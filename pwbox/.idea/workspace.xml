@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5ac26dc6-c951-43da-a8f2-ae842d11df3b" name="Default" comment="" />
+    <list default="true" id="5ac26dc6-c951-43da-a8f2-ae842d11df3b" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/src/Controller/UploadController.php" afterPath="$PROJECT_DIR$/src/Controller/UploadController.php" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,106 +16,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="DoctrineUserRepository.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Implementation/DoctrineUserRepository.php">
+      <file leaf-file-name="DownloadController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/DownloadController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="340" column="25" lean-forward="true" selection-start-line="340" selection-start-column="25" selection-end-line="340" selection-end-column="25" />
-              <folding>
-                <marker date="1526427251165" expanded="true" signature="591:652" ph="SELECT * FRO... user" />
-                <marker date="1526427251165" expanded="true" signature="1000:1136" ph="INSERT INTO user... " />
-                <marker date="1526427251165" expanded="true" signature="1000:1152" ph="INSERT INTO user... " />
-                <marker date="1526427251165" expanded="true" signature="1743:1750" ph="SELECT * FRO... user" />
-                <marker date="1526427251165" expanded="true" signature="1966:2052" ph="INSERT INTO folder... " />
-                <marker date="1526427251165" expanded="true" signature="2389:2441" ph="INSERT INTO root_users... " />
-                <marker date="1526427251165" expanded="true" signature="2765:2772" ph="SELECT * FRO... " />
-                <marker date="1526427251165" expanded="true" signature="2765:2775" ph="SELECT id fr... user" />
-                <marker date="1526427251165" expanded="true" signature="2765:2834" ph="SELECT id FR... user" />
-                <marker date="1526427251165" expanded="true" signature="3305:3433" ph="SELECT * FRO... folder" />
-                <marker date="1526427251165" expanded="true" signature="3687:3724" ph="SELECT * FRO... folder" />
-                <marker date="1526427251165" expanded="true" signature="3687:3727" ph="SELECT * FRO... folder" />
-                <marker date="1526427251165" expanded="true" signature="3976:4014" ph="SELECT * FRO... file" />
-                <marker date="1526427251165" expanded="true" signature="4262:4290" ph="SELECT * FRO... user" />
-                <marker date="1526427251165" expanded="true" signature="4262:4293" ph="SELECT * FRO... user" />
-                <marker date="1526427251165" expanded="true" signature="4608:4658" ph="UPDATE user... " />
-                <marker date="1526427251165" expanded="true" signature="4866:4897" ph="SELECT * FRO... user" />
-                <marker date="1526427251165" expanded="true" signature="5152:5244" ph="UPDATE user... " />
-                <marker date="1526427251165" expanded="true" signature="5625:5656" ph="SELECT * FRO... user" />
-                <marker date="1526427251165" expanded="true" signature="5981:6017" ph="SELECT caden... folder" />
-                <marker date="1526427251165" expanded="true" signature="5981:6023" ph="SELECT caden... folder" />
-                <marker date="1526427251165" expanded="true" signature="6262:6392" ph="select * fro... $sql" />
-                <marker date="1526427251165" expanded="true" signature="6279:6391" ph="INSERT INTO folder... " />
-                <marker date="1526427251165" expanded="true" signature="6831:6872" ph="INSERT INTO folder... " />
-                <marker date="1526427251165" expanded="true" signature="6831:6878" ph="UPDATE folder... " />
-                <marker date="1526427251165" expanded="true" signature="7189:7227" ph="UPDATE file... " />
-                <marker date="1526427251165" expanded="true" signature="7189:7232" ph="UPDATE file... " />
-                <marker date="1526427251165" expanded="true" signature="7512:7560" ph="SELECT fk_pa... folder" />
-                <marker date="1526427251165" expanded="true" signature="7869:7915" ph="SELECT fk_fo... file" />
-                <marker date="1526427251165" expanded="true" signature="8227:8263" ph="DELETE FROM folder... " />
-                <marker date="1526427251165" expanded="true" signature="8492:8524" ph="DELETE FROM file... " />
-                <marker date="1526427251165" expanded="true" signature="8748:8778" ph="DELETE FROM user... " />
-                <marker date="1526427251165" expanded="true" signature="9005:9061" ph="select * fro... folder" />
-                <marker date="1526427251165" expanded="true" signature="9005:9121" ph="select * fro... folder" />
-                <marker date="1526427251165" expanded="true" signature="9005:9129" ph="select * fro... folder" />
-                <marker date="1526427251165" expanded="true" signature="9428:9555" ph="select * fro... file" />
-                <marker date="1526427251165" expanded="true" signature="9890:9930" ph="select id fr... user" />
-                <marker date="1526427251165" expanded="true" signature="10229:10301" ph="select * fro... shared_folders" />
-                <marker date="1526427251165" expanded="true" signature="10595:10642" ph="insert into shared_folders... " />
-                <marker date="1526427251165" expanded="true" signature="10992:11096" ph="insert into file... " />
-                <marker date="1526427251165" expanded="true" signature="11565:11605" ph="select creat... folder" />
-                <marker date="1526427251165" expanded="true" signature="11598:11600" ph="insert into file... " />
-                <marker date="1526427251165" expanded="true" signature="11868:11907" ph="select caden... folder" />
-                <marker date="1526427251165" expanded="true" signature="12173:12251" ph="SELECT * FRO... shared_folders" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/routes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="38" column="8" lean-forward="false" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
+            <state relative-caret-position="577">
+              <caret line="70" column="9" lean-forward="true" selection-start-line="70" selection-start-column="9" selection-end-line="70" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SharedController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SharedController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/SharedController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="38" column="40" lean-forward="false" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="40" />
+            <state relative-caret-position="517">
+              <caret line="71" column="4" lean-forward="true" selection-start-line="71" selection-start-column="4" selection-end-line="76" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DashboardController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/DashboardController.php">
+      <file leaf-file-name="UploadController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Controller/UploadController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="535">
-              <caret line="54" column="59" lean-forward="true" selection-start-line="54" selection-start-column="59" selection-end-line="54" selection-end-column="59" />
+            <state relative-caret-position="408">
+              <caret line="76" column="84" lean-forward="false" selection-start-line="76" selection-start-column="84" selection-end-line="76" selection-end-column="84" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FileController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/FileController.php">
+      <file leaf-file-name="GetFolderService.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/UseCase/GetFolderService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="466">
-              <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+            <state relative-caret-position="378">
+              <caret line="24" column="1" lean-forward="false" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FolderController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/FolderController.php">
+      <file leaf-file-name="dashboard.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/view/templates/dashboard.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="26" column="32" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+            <state relative-caret-position="2982">
+              <caret line="142" column="50" lean-forward="false" selection-start-line="142" selection-start-column="50" selection-end-line="142" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -135,12 +82,18 @@
       <find>from file</find>
       <find>getparent</find>
       <find>addfolder</find>
+      <find>addfile</find>
+      <find>creator</find>
+      <find>update</find>
+      <find>rename</find>
+      <find>getfolder</find>
+      <find>get_folder</find>
+      <find>getchain</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Model/UseCase/FoldersUserService.php" />
         <option value="$PROJECT_DIR$/src/Model/UseCase/FoldersInsideService.php" />
         <option value="$PROJECT_DIR$/src/view/templates/profile.twig" />
         <option value="$PROJECT_DIR$/src/view/templates/base.twig" />
@@ -148,7 +101,6 @@
         <option value="$PROJECT_DIR$/src/Model/UseCase/LoginUserService.php" />
         <option value="$PROJECT_DIR$/src/Model/UseCase/AddFolderService.php" />
         <option value="$PROJECT_DIR$/public/assets/css/styles_register.css" />
-        <option value="$PROJECT_DIR$/src/view/templates/login.twig" />
         <option value="$PROJECT_DIR$/public/assets/css/styles_dash.css" />
         <option value="$PROJECT_DIR$/src/Model/UseCase/GetParentService.php" />
         <option value="$PROJECT_DIR$/src/Model/UseCase/RemoveFolderService.php" />
@@ -167,8 +119,6 @@
         <option value="$PROJECT_DIR$/src/Model/UseCase/UploadService.php" />
         <option value="$PROJECT_DIR$/src/Model/File.php" />
         <option value="$PROJECT_DIR$/src/Controller/DownloaderController.php" />
-        <option value="$PROJECT_DIR$/src/Controller/DownloadController.php" />
-        <option value="$PROJECT_DIR$/src/Controller/UploadController.php" />
         <option value="$PROJECT_DIR$/src/Model/UseCase/RemoveFileService.php" />
         <option value="$PROJECT_DIR$/src/Model/UseCase/GetFolderService.php" />
         <option value="$PROJECT_DIR$/src/Model/UseCase/RenameFileService.php" />
@@ -187,10 +137,14 @@
         <option value="$PROJECT_DIR$/src/view/templates/dashboard.twig" />
         <option value="$PROJECT_DIR$/src/Model/UseCase/ChainService.php" />
         <option value="$PROJECT_DIR$/src/Controller/DashboardController.php" />
-        <option value="$PROJECT_DIR$/app/dependencies.php" />
         <option value="$PROJECT_DIR$/src/Model/UseCase/AccessibleService.php" />
-        <option value="$PROJECT_DIR$/src/Model/Implementation/DoctrineUserRepository.php" />
         <option value="$PROJECT_DIR$/src/Controller/SharedController.php" />
+        <option value="$PROJECT_DIR$/app/dependencies.php" />
+        <option value="$PROJECT_DIR$/src/Model/UseCase/FileCreatorService.php" />
+        <option value="$PROJECT_DIR$/src/Controller/DownloadController.php" />
+        <option value="$PROJECT_DIR$/src/Model/Implementation/DoctrineUserRepository.php" />
+        <option value="$PROJECT_DIR$/src/view/templates/login.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/UploadController.php" />
       </list>
     </option>
   </component>
@@ -352,14 +306,14 @@
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\victo\Desktop\Proyectos Web\proyectos\pwbox\src\view\templates" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\victo\Desktop\Proyectos Web\proyectos\pwbox\src\Model\UseCase" />
       <recent name="C:\Users\victo\Desktop\Proyectos Web\proyectos\pwbox\src\Controller" />
       <recent name="C:\Users\victo\Desktop\Proyectos Web\proyectos\pwbox\src\Model" />
       <recent name="C:\Users\victo\Desktop\Proyectos Web\proyectos\pwbox\public\assets\css" />
+      <recent name="C:\Users\victo\Desktop\Proyectos Web\proyectos\pwbox\src\view\templates" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\victo\Desktop\Proyectos Web\proyectos\pwbox\src\view\templates" />
     </key>
   </component>
@@ -410,11 +364,12 @@
       <workItem from="1526322529786" duration="14453000" />
       <workItem from="1526395136142" duration="602000" />
       <workItem from="1526398158012" duration="9919000" />
+      <workItem from="1526488381221" duration="6301000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="163855000" />
+    <option name="totallyTimeSpent" value="170156000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="1" />
@@ -425,7 +380,6 @@
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -437,6 +391,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -453,13 +408,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Model/UseCase/LoginUserService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="22" column="15" lean-forward="false" selection-start-line="22" selection-start-column="15" selection-end-line="22" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/UseCase/UserService.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
@@ -494,13 +442,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="8" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/templates/login.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="21" column="16" lean-forward="false" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -600,20 +541,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/templates/base.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="19" lean-forward="false" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/templates/navbar.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="28" column="39" lean-forward="false" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/RegisterController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1032">
@@ -625,28 +552,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="455">
           <caret line="31" column="38" lean-forward="false" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/UseCase/UploadService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="26" column="29" lean-forward="false" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/DownloadController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="41" column="19" lean-forward="true" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/UseCase/GetFolderService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -673,13 +578,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/UploadController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="732">
-          <caret line="84" column="32" lean-forward="false" selection-start-line="84" selection-start-column="32" selection-end-line="84" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/UseCase/RenameFolderService.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
@@ -692,7 +590,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1092">
           <caret line="59" column="53" lean-forward="false" selection-start-line="59" selection-start-column="53" selection-end-line="59" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -729,22 +626,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/templates/update.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="41" lean-forward="false" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/UseCase/RootService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/UseCase/RootService.php" />
     <entry file="file://$PROJECT_DIR$/src/Model/UseCase/CreatorService.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
@@ -757,23 +639,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="46" column="68" lean-forward="true" selection-start-line="46" selection-start-column="68" selection-end-line="46" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/FolderController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="26" column="32" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/templates/dashboard.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="32" column="19" lean-forward="false" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -785,26 +650,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/DashboardController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="535">
-          <caret line="54" column="59" lean-forward="true" selection-start-line="54" selection-start-column="59" selection-end-line="54" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/FileController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/dependencies.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="724">
-          <caret line="184" column="49" lean-forward="false" selection-start-line="184" selection-start-column="49" selection-end-line="184" selection-end-column="49" />
+        <state relative-caret-position="525">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -817,71 +666,178 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Implementation/DoctrineUserRepository.php">
+    <entry file="file://$PROJECT_DIR$/src/Controller/FolderController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="340" column="25" lean-forward="true" selection-start-line="340" selection-start-column="25" selection-end-line="340" selection-end-column="25" />
-          <folding>
-            <marker date="1526427251165" expanded="true" signature="591:652" ph="SELECT * FRO... user" />
-            <marker date="1526427251165" expanded="true" signature="1000:1136" ph="INSERT INTO user... " />
-            <marker date="1526427251165" expanded="true" signature="1000:1152" ph="INSERT INTO user... " />
-            <marker date="1526427251165" expanded="true" signature="1743:1750" ph="SELECT * FRO... user" />
-            <marker date="1526427251165" expanded="true" signature="1966:2052" ph="INSERT INTO folder... " />
-            <marker date="1526427251165" expanded="true" signature="2389:2441" ph="INSERT INTO root_users... " />
-            <marker date="1526427251165" expanded="true" signature="2765:2772" ph="SELECT * FRO... " />
-            <marker date="1526427251165" expanded="true" signature="2765:2775" ph="SELECT id fr... user" />
-            <marker date="1526427251165" expanded="true" signature="2765:2834" ph="SELECT id FR... user" />
-            <marker date="1526427251165" expanded="true" signature="3305:3433" ph="SELECT * FRO... folder" />
-            <marker date="1526427251165" expanded="true" signature="3687:3724" ph="SELECT * FRO... folder" />
-            <marker date="1526427251165" expanded="true" signature="3687:3727" ph="SELECT * FRO... folder" />
-            <marker date="1526427251165" expanded="true" signature="3976:4014" ph="SELECT * FRO... file" />
-            <marker date="1526427251165" expanded="true" signature="4262:4290" ph="SELECT * FRO... user" />
-            <marker date="1526427251165" expanded="true" signature="4262:4293" ph="SELECT * FRO... user" />
-            <marker date="1526427251165" expanded="true" signature="4608:4658" ph="UPDATE user... " />
-            <marker date="1526427251165" expanded="true" signature="4866:4897" ph="SELECT * FRO... user" />
-            <marker date="1526427251165" expanded="true" signature="5152:5244" ph="UPDATE user... " />
-            <marker date="1526427251165" expanded="true" signature="5625:5656" ph="SELECT * FRO... user" />
-            <marker date="1526427251165" expanded="true" signature="5981:6017" ph="SELECT caden... folder" />
-            <marker date="1526427251165" expanded="true" signature="5981:6023" ph="SELECT caden... folder" />
-            <marker date="1526427251165" expanded="true" signature="6262:6392" ph="select * fro... $sql" />
-            <marker date="1526427251165" expanded="true" signature="6279:6391" ph="INSERT INTO folder... " />
-            <marker date="1526427251165" expanded="true" signature="6831:6872" ph="INSERT INTO folder... " />
-            <marker date="1526427251165" expanded="true" signature="6831:6878" ph="UPDATE folder... " />
-            <marker date="1526427251165" expanded="true" signature="7189:7227" ph="UPDATE file... " />
-            <marker date="1526427251165" expanded="true" signature="7189:7232" ph="UPDATE file... " />
-            <marker date="1526427251165" expanded="true" signature="7512:7560" ph="SELECT fk_pa... folder" />
-            <marker date="1526427251165" expanded="true" signature="7869:7915" ph="SELECT fk_fo... file" />
-            <marker date="1526427251165" expanded="true" signature="8227:8263" ph="DELETE FROM folder... " />
-            <marker date="1526427251165" expanded="true" signature="8492:8524" ph="DELETE FROM file... " />
-            <marker date="1526427251165" expanded="true" signature="8748:8778" ph="DELETE FROM user... " />
-            <marker date="1526427251165" expanded="true" signature="9005:9061" ph="select * fro... folder" />
-            <marker date="1526427251165" expanded="true" signature="9005:9121" ph="select * fro... folder" />
-            <marker date="1526427251165" expanded="true" signature="9005:9129" ph="select * fro... folder" />
-            <marker date="1526427251165" expanded="true" signature="9428:9555" ph="select * fro... file" />
-            <marker date="1526427251165" expanded="true" signature="9890:9930" ph="select id fr... user" />
-            <marker date="1526427251165" expanded="true" signature="10229:10301" ph="select * fro... shared_folders" />
-            <marker date="1526427251165" expanded="true" signature="10595:10642" ph="insert into shared_folders... " />
-            <marker date="1526427251165" expanded="true" signature="10992:11096" ph="insert into file... " />
-            <marker date="1526427251165" expanded="true" signature="11565:11605" ph="select creat... folder" />
-            <marker date="1526427251165" expanded="true" signature="11598:11600" ph="insert into file... " />
-            <marker date="1526427251165" expanded="true" signature="11868:11907" ph="select caden... folder" />
-            <marker date="1526427251165" expanded="true" signature="12173:12251" ph="SELECT * FRO... shared_folders" />
-          </folding>
+        <state relative-caret-position="189">
+          <caret line="16" column="25" lean-forward="true" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/DashboardController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="535">
+          <caret line="54" column="59" lean-forward="false" selection-start-line="54" selection-start-column="59" selection-end-line="54" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/UseCase/UploadService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="31" column="1" lean-forward="true" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/templates/navbar.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="25" column="39" lean-forward="true" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/templates/base.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="19" lean-forward="false" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/templates/update.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="38" column="52" lean-forward="false" selection-start-line="38" selection-start-column="52" selection-end-line="38" selection-end-column="64" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="38" column="8" lean-forward="false" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
+        <state relative-caret-position="472">
+          <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/templates/dashboard.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2982">
+          <caret line="142" column="50" lean-forward="false" selection-start-line="142" selection-start-column="50" selection-end-line="142" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/dependencies.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="138" column="20" lean-forward="true" selection-start-line="138" selection-start-column="20" selection-end-line="138" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/UseCase/GetFolderService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="24" column="1" lean-forward="false" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/UseCase/FileCreatorService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="22" column="33" lean-forward="false" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/SharedController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="38" column="40" lean-forward="false" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="40" />
+        <state relative-caret-position="517">
+          <caret line="71" column="4" lean-forward="true" selection-start-line="71" selection-start-column="4" selection-end-line="76" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/DownloadController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="577">
+          <caret line="70" column="9" lean-forward="true" selection-start-line="70" selection-start-column="9" selection-end-line="70" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Implementation/DoctrineUserRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="664">
+          <caret line="116" column="42" lean-forward="true" selection-start-line="116" selection-start-column="42" selection-end-line="116" selection-end-column="42" />
+          <folding>
+            <marker date="1526494193386" expanded="true" signature="591:652" ph="SELECT * FRO... user" />
+            <marker date="1526494193386" expanded="true" signature="1000:1136" ph="INSERT INTO user... " />
+            <marker date="1526494193386" expanded="true" signature="1000:1152" ph="INSERT INTO user... " />
+            <marker date="1526494193386" expanded="true" signature="1743:1750" ph="SELECT * FRO... user" />
+            <marker date="1526494193386" expanded="true" signature="1966:2052" ph="INSERT INTO folder... " />
+            <marker date="1526494193386" expanded="true" signature="2389:2441" ph="INSERT INTO root_users... " />
+            <marker date="1526494193386" expanded="true" signature="2766:2773" ph="SELECT * FRO... " />
+            <marker date="1526494193386" expanded="true" signature="2766:2776" ph="SELECT id fr... user" />
+            <marker date="1526494193386" expanded="true" signature="2766:2835" ph="SELECT id FR... user" />
+            <marker date="1526494193386" expanded="true" signature="3324:3393" ph="SELECT id FR... user" />
+            <marker date="1526494193386" expanded="true" signature="3800:3864" ph="SELECT id FR... user" />
+            <marker date="1526494193386" expanded="true" signature="4375:4503" ph="SELECT * FRO... folder" />
+            <marker date="1526494193386" expanded="true" signature="4757:4794" ph="SELECT * FRO... folder" />
+            <marker date="1526494193386" expanded="true" signature="4757:4797" ph="SELECT * FRO... folder" />
+            <marker date="1526494193386" expanded="true" signature="5046:5084" ph="SELECT * FRO... file" />
+            <marker date="1526494193386" expanded="true" signature="5332:5360" ph="SELECT * FRO... user" />
+            <marker date="1526494193386" expanded="true" signature="5332:5363" ph="SELECT * FRO... user" />
+            <marker date="1526494193386" expanded="true" signature="5678:5728" ph="UPDATE user... " />
+            <marker date="1526494193386" expanded="true" signature="5936:5967" ph="SELECT * FRO... user" />
+            <marker date="1526494193386" expanded="true" signature="6222:6314" ph="UPDATE user... " />
+            <marker date="1526494193386" expanded="true" signature="6695:6726" ph="SELECT * FRO... user" />
+            <marker date="1526494193386" expanded="true" signature="7051:7087" ph="SELECT caden... folder" />
+            <marker date="1526494193386" expanded="true" signature="7051:7093" ph="SELECT caden... folder" />
+            <marker date="1526494193386" expanded="true" signature="7332:7462" ph="select * fro... $sql" />
+            <marker date="1526494193386" expanded="true" signature="7349:7461" ph="INSERT INTO folder... " />
+            <marker date="1526494193386" expanded="true" signature="7901:7942" ph="INSERT INTO folder... " />
+            <marker date="1526494193386" expanded="true" signature="7901:7948" ph="UPDATE folder... " />
+            <marker date="1526494193386" expanded="true" signature="8259:8297" ph="UPDATE file... " />
+            <marker date="1526494193386" expanded="true" signature="8259:8302" ph="UPDATE file... " />
+            <marker date="1526494193386" expanded="true" signature="8582:8630" ph="SELECT fk_pa... folder" />
+            <marker date="1526494193386" expanded="true" signature="8937:8981" ph="SELECT fk_fo... file" />
+            <marker date="1526494193386" expanded="true" signature="9288:9324" ph="DELETE FROM folder... " />
+            <marker date="1526494193386" expanded="true" signature="9553:9585" ph="DELETE FROM file... " />
+            <marker date="1526494193386" expanded="true" signature="9809:9839" ph="DELETE FROM user... " />
+            <marker date="1526494193386" expanded="true" signature="10066:10122" ph="select * fro... folder" />
+            <marker date="1526494193386" expanded="true" signature="10066:10182" ph="select * fro... folder" />
+            <marker date="1526494193386" expanded="true" signature="10066:10190" ph="select * fro... folder" />
+            <marker date="1526494193386" expanded="true" signature="10489:10616" ph="select * fro... file" />
+            <marker date="1526494193386" expanded="true" signature="10951:10991" ph="select id fr... user" />
+            <marker date="1526494193386" expanded="true" signature="11290:11362" ph="select * fro... shared_folders" />
+            <marker date="1526494193386" expanded="true" signature="11656:11703" ph="insert into shared_folders... " />
+            <marker date="1526494193386" expanded="true" signature="12053:12176" ph="insert into file... " />
+            <marker date="1526494193386" expanded="true" signature="12711:12751" ph="select creat... folder" />
+            <marker date="1526494193386" expanded="true" signature="12744:12746" ph="insert into file... " />
+            <marker date="1526494193386" expanded="true" signature="13014:13053" ph="select caden... folder" />
+            <marker date="1526494193386" expanded="true" signature="13319:13397" ph="SELECT * FRO... shared_folders" />
+            <marker date="1526494193386" expanded="true" signature="13797:13834" ph="SELECT creat... file" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/templates/login.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="21" column="16" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/UploadController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="76" column="84" lean-forward="false" selection-start-line="76" selection-start-column="84" selection-end-line="76" selection-end-column="84" />
           <folding />
         </state>
       </provider>

@@ -77,7 +77,7 @@ class DoctrineUserRepository implements UserRepository
 
     }
 
-    public function login($username, $password)
+    public function login2($username, $password)
     {
         $sql = "SELECT id FROM user WHERE username= :username AND password= :password";
         $stmt = $this->connection->prepare($sql);
@@ -90,6 +90,34 @@ class DoctrineUserRepository implements UserRepository
         $_SESSION['id'] = $user['id'];
         if($count>0){
            return true;
+        }
+        return false;
+    }
+
+    public function login($username, $password){
+        $sql = "SELECT id FROM user WHERE username= :username AND password= :password";
+        $stmt = $this->connection->prepare($sql);
+        $stmt->bindValue("username", $username, 'string');
+        $stmt->bindValue("password", md5($password), 'string');
+        $stmt->execute();
+        $count = $stmt->fetchColumn(0);
+        $stmt->execute();
+        $user = $stmt->fetch();
+        $_SESSION['id'] = $user['id'];
+
+        if (strpos($username, '@') !== false){
+            $sql = "SELECT id FROM user WHERE email = :email AND password= :password";
+            $stmt = $this->connection->prepare($sql);
+            $stmt->bindValue("email", $username, 'string');
+            $stmt->bindValue("password", md5($password), 'string');
+            $stmt->execute();
+            $count = $stmt->fetchColumn(0);
+            $stmt->execute();
+            $user = $stmt->fetch();
+            $_SESSION['id'] = $user['id'];
+        }
+        if($count>0){
+            return true;
         }
         return false;
     }
@@ -218,10 +246,10 @@ class DoctrineUserRepository implements UserRepository
     }
 
     public function getFolder($data){
-        $id_folder = $data["file"];
-        $sql = "SELECT fk_folder from file where id=:id_folder";
+        $id_file = $data["file"];
+        $sql = "SELECT fk_folder from file where id=:id_file";
         $stmt = $this->connection->prepare($sql);
-        $stmt->bindValue("id_folder", $id_folder, 'integer');
+        $stmt->bindValue("id_file", $id_file, 'string');
         $stmt->execute();
         $folder = $stmt->fetch();
         return $folder["fk_folder"];
@@ -304,7 +332,7 @@ class DoctrineUserRepository implements UserRepository
     }
 
     public function addFile(File $file){
-        $sql = "insert into file(id, name, fk_folder, size, extension) values(:id, :name, :fk_folder, :size, :extension)";
+        $sql = "insert into file(id, name, fk_folder, size, extension, creator) values(:id, :name, :fk_folder, :size, :extension, :creator)";
         $stmt = $this->connection->prepare($sql);
 
         $stmt->bindValue("id", $file->getId(), 'string');
@@ -312,6 +340,8 @@ class DoctrineUserRepository implements UserRepository
         $stmt->bindValue("fk_folder", $file->getFolder(), 'integer');
         $stmt->bindValue("size", $file->getSize(), 'float');
         $stmt->bindValue("extension", $file->getExtension(), 'string');
+        $stmt->bindValue("creator", $_SESSION['id'], 'integer');
+
         $stmt->execute();
     }
 
@@ -344,5 +374,14 @@ class DoctrineUserRepository implements UserRepository
             return true;
         }
         return false;
+    }
+
+    public function getFileCreator($data){
+        $sql = "SELECT creator FROM file WHERE id=:id";
+        $stmt = $this->connection->prepare($sql);
+        $stmt->bindValue("id", $data['id'], 'integer');
+        $stmt->execute();
+        $file = $stmt->fetch();
+        return $file["creator"];
     }
 }
