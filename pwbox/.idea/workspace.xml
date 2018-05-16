@@ -14,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="DoctrineUserRepository.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DoctrineUserRepository.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/Implementation/DoctrineUserRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="751">
-              <caret line="404" column="20" lean-forward="false" selection-start-line="404" selection-start-column="20" selection-end-line="404" selection-end-column="20" />
+            <state relative-caret-position="8253">
+              <caret line="401" column="59" lean-forward="false" selection-start-line="401" selection-start-column="59" selection-end-line="401" selection-end-column="59" />
               <folding>
                 <marker date="1526497152429" expanded="true" signature="591:652" ph="SELECT * FRO... user" />
                 <marker date="1526497152429" expanded="true" signature="1000:1136" ph="INSERT INTO user... " />
@@ -77,7 +77,7 @@
       <file leaf-file-name="DownloadController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/DownloadController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1046">
+            <state relative-caret-position="1323">
               <caret line="70" column="9" lean-forward="false" selection-start-line="70" selection-start-column="9" selection-end-line="70" selection-end-column="9" />
               <folding />
             </state>
@@ -87,7 +87,7 @@
       <file leaf-file-name="UploadController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/UploadController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
+            <state relative-caret-position="1470">
               <caret line="78" column="55" lean-forward="false" selection-start-line="78" selection-start-column="55" selection-end-line="78" selection-end-column="55" />
               <folding />
             </state>
@@ -97,18 +97,28 @@
       <file leaf-file-name="dependencies.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/dependencies.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
+            <state relative-caret-position="3024">
               <caret line="144" column="6" lean-forward="false" selection-start-line="144" selection-start-column="6" selection-end-line="144" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dashboard.twig" pinned="false" current-in-tab="false">
+      <file leaf-file-name="dashboard.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/view/templates/dashboard.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2982">
-              <caret line="142" column="50" lean-forward="false" selection-start-line="142" selection-start-column="50" selection-end-line="142" selection-end-column="50" />
+            <state relative-caret-position="576">
+              <caret line="218" column="102" lean-forward="false" selection-start-line="218" selection-start-column="102" selection-end-line="218" selection-end-column="102" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="styles_dash.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/assets/css/styles_dash.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="504">
+              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -149,7 +159,6 @@
         <option value="$PROJECT_DIR$/src/Model/UseCase/LoginUserService.php" />
         <option value="$PROJECT_DIR$/src/Model/UseCase/AddFolderService.php" />
         <option value="$PROJECT_DIR$/public/assets/css/styles_register.css" />
-        <option value="$PROJECT_DIR$/public/assets/css/styles_dash.css" />
         <option value="$PROJECT_DIR$/src/Model/UseCase/GetParentService.php" />
         <option value="$PROJECT_DIR$/src/Model/UseCase/RemoveFolderService.php" />
         <option value="$PROJECT_DIR$/public/assets/js/modals.js" />
@@ -182,7 +191,6 @@
         <option value="$PROJECT_DIR$/src/Model/UseCase/FolderParentService.php" />
         <option value="$PROJECT_DIR$/src/Model/UseCase/RootService.php" />
         <option value="$PROJECT_DIR$/src/Model/UseCase/CreatorService.php" />
-        <option value="$PROJECT_DIR$/src/view/templates/dashboard.twig" />
         <option value="$PROJECT_DIR$/src/Model/UseCase/ChainService.php" />
         <option value="$PROJECT_DIR$/src/Controller/DashboardController.php" />
         <option value="$PROJECT_DIR$/src/Model/UseCase/AccessibleService.php" />
@@ -194,6 +202,8 @@
         <option value="$PROJECT_DIR$/src/Model/UseCase/UpdateStorageService.php" />
         <option value="$PROJECT_DIR$/src/Controller/UploadController.php" />
         <option value="$PROJECT_DIR$/src/Model/Implementation/DoctrineUserRepository.php" />
+        <option value="$PROJECT_DIR$/public/assets/css/styles_dash.css" />
+        <option value="$PROJECT_DIR$/src/view/templates/dashboard.twig" />
       </list>
     </option>
   </component>
@@ -414,11 +424,12 @@
       <workItem from="1526395136142" duration="602000" />
       <workItem from="1526398158012" duration="9919000" />
       <workItem from="1526488381221" duration="8789000" />
+      <workItem from="1526506257571" duration="2031000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="172644000" />
+    <option name="totallyTimeSpent" value="174675000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="1" />
@@ -468,7 +479,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -476,7 +486,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="21" column="5" lean-forward="false" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -487,18 +496,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/css/styles_dash.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="23" column="1" lean-forward="false" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/UseCase/RemoveFolderService.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -513,7 +514,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -528,7 +528,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -536,7 +535,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="22" column="48" lean-forward="false" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -544,7 +542,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="22" column="50" lean-forward="false" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -601,7 +598,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="22" column="44" lean-forward="true" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -609,7 +605,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="22" column="8" lean-forward="false" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -624,7 +619,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="24" column="1" lean-forward="false" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -639,9 +633,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="588">
           <caret line="33" column="46" lean-forward="true" selection-start-line="23" selection-start-column="8" selection-end-line="33" selection-end-column="46" />
-          <folding>
-            <element signature="e#120#151#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -656,7 +647,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -664,7 +654,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="22" column="54" lean-forward="true" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -673,7 +662,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -688,7 +676,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -696,7 +683,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
           <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -704,7 +690,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -712,7 +697,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="16" column="25" lean-forward="true" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -720,7 +704,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="535">
           <caret line="54" column="59" lean-forward="false" selection-start-line="54" selection-start-column="59" selection-end-line="54" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -728,7 +711,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
           <caret line="31" column="1" lean-forward="true" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -736,7 +718,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
           <caret line="25" column="39" lean-forward="true" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -744,7 +725,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="8" column="19" lean-forward="false" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -752,7 +732,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="466">
           <caret line="38" column="52" lean-forward="false" selection-start-line="38" selection-start-column="52" selection-end-line="38" selection-end-column="64" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -760,15 +739,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="472">
           <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/templates/dashboard.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2982">
-          <caret line="142" column="50" lean-forward="false" selection-start-line="142" selection-start-column="50" selection-end-line="142" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -776,7 +746,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="24" column="1" lean-forward="false" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -784,7 +753,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="22" column="33" lean-forward="false" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -792,7 +760,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="416">
           <caret line="21" column="16" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -800,13 +767,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="73">
           <caret line="49" column="36" lean-forward="false" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/UploadController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
+        <state relative-caret-position="1470">
           <caret line="78" column="55" lean-forward="false" selection-start-line="78" selection-start-column="55" selection-end-line="78" selection-end-column="55" />
           <folding />
         </state>
@@ -816,13 +782,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="22" column="58" lean-forward="true" selection-start-line="22" selection-start-column="58" selection-end-line="22" selection-end-column="58" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/dependencies.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
+        <state relative-caret-position="3024">
           <caret line="144" column="6" lean-forward="false" selection-start-line="144" selection-start-column="6" selection-end-line="144" selection-end-column="6" />
           <folding />
         </state>
@@ -830,7 +795,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/DownloadController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1046">
+        <state relative-caret-position="1323">
           <caret line="70" column="9" lean-forward="false" selection-start-line="70" selection-start-column="9" selection-end-line="70" selection-end-column="9" />
           <folding />
         </state>
@@ -838,8 +803,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Implementation/DoctrineUserRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="751">
-          <caret line="404" column="20" lean-forward="false" selection-start-line="404" selection-start-column="20" selection-end-line="404" selection-end-column="20" />
+        <state relative-caret-position="8253">
+          <caret line="401" column="59" lean-forward="false" selection-start-line="401" selection-start-column="59" selection-end-line="401" selection-end-column="59" />
           <folding>
             <marker date="1526497152429" expanded="true" signature="591:652" ph="SELECT * FRO... user" />
             <marker date="1526497152429" expanded="true" signature="1000:1136" ph="INSERT INTO user... " />
@@ -891,6 +856,22 @@
             <marker date="1526497152429" expanded="true" signature="14099:14137" ph="SELECT capac... user" />
             <marker date="1526497152429" expanded="true" signature="14468:14515" ph="UPDATE user... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/css/styles_dash.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/templates/dashboard.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="218" column="102" lean-forward="false" selection-start-line="218" selection-start-column="102" selection-end-line="218" selection-end-column="102" />
+          <folding />
         </state>
       </provider>
     </entry>

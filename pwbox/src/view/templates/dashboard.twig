@@ -209,16 +209,15 @@
                         <h4 class="modal-title">Subir archivo</h4>
                     </div>
 
-                    <form method="post" action={{ "/upload/" ~ id }}  enctype="multipart/form-data">
+                    <form id="formAdd" method="post" action={{ "/upload/" ~ id }}  enctype="multipart/form-data">
                         <!-- upload of a single file -->
                         <p>
-                            <label>Add file (single): </label><br/>
+                            <label>Añadir archivo: </label><br/>
                             <input type="file" name="file"/>
                         </p>
-
-                        <p>
-                            <input type="submit"/>
-                        </p>
+                        <div>
+                            <button id="buttonAdd" class="btn btn-primary" type="submit">Subir archivo</button>
+                        </div>
                     </form>
 
                 </div>

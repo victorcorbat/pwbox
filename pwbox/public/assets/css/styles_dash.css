@@ -22,3 +22,12 @@ img{
 .opciones{
     float:right;
 }
+
+#formAdd{
+    padding:15px;
+}
+
+#buttonAdd{
+    margin-top:10px;
+    margin-left:80%;
+}
