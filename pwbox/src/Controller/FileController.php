@@ -22,7 +22,14 @@ class FileController
 
     public function renameAction(Request $request, Response $response, array $args)
     {
-        $data["name"] = $_POST["nombre"];
+
+        $filename = $_POST["nombre"];
+
+        if(strlen($filename)>40){
+            $filename = substr($filename, 0, 40);
+            $filename = $filename."...";
+        }
+        $data["name"] = $filename;
         $data["file"] = $args["file_id"];
 
         $service = $this->container->get('get_folder_service');

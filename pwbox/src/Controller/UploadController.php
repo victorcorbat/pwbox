@@ -40,9 +40,14 @@ class UploadController
 
         }
 
-        $id = $args["folder_id"];
-
-        return $response->withStatus(302)->withHeader('Location', '/dashboard/'.$id);
+        $data["id"] = $args["folder_id"];
+        $id = $data["id"];
+        $service = $this->container->get('folders_inside_service');
+        $folders = $service($data);
+        $service = $this->container->get('files_inside_service');
+        $files = $service($data);
+        return $this->container->get('view')
+            ->render($response, 'dashboard.twig', ['folders'=>$folders, 'id'=>$id, 'files'=>$files, 'menu'=>$menu, 'error'=>$error]);
 
     }
 
@@ -75,8 +80,13 @@ class UploadController
                 $service = $this->container->get('update_storage_service');
                 $storage = $service($data);
                 if($storage==true){
+                    $filename = $uploadedFile->getClientFilename();
+                    if(strlen($filename)>40){
+                        $filename = substr($filename, 0, 40);
+                        $filename = $filename."...";
+                    }
                     $data['basename'] = $basename;
-                    $data['filename'] = $uploadedFile->getClientFilename();
+                    $data['filename'] = $filename;
                     $data['extension'] = $extension;
                     $data['folder'] = $folder;
                     $data['size']=$uploadedFile->getSize();

@@ -22,7 +22,14 @@ class FolderController
 
     public function createAction(Request $request, Response $response, array $args)
     {
-        $data["name"] = $_POST["nombre"];
+        $foldername = $_POST["nombre"];
+
+        if(strlen($foldername)>40){
+            $foldername = substr($foldername, 0, 40);
+            $foldername = $foldername."...";
+        }
+
+        $data["name"] = $foldername;
         $data["folder"] = $args["folder_id"];
         $menu['dashboard']=true;
 
@@ -38,7 +45,14 @@ class FolderController
 
     public function renameAction(Request $request, Response $response, array $args)
     {
-        $data["name"] = $_POST["nombre"];
+        $foldername = $_POST["nombre"];
+
+        if(strlen($foldername)>40){
+            $foldername = substr($foldername, 0, 40);
+            $foldername = $foldername."...";
+        }
+
+        $data["name"] = $foldername;
         $data["folder"] = $args["folder_id"];
         $menu['dashboard']=true;
         //get parent service!
