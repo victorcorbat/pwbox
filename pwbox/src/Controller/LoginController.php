@@ -24,26 +24,13 @@ class LoginController
     public function indexAction(Request $request, Response $response, array $args)
     {
         if(isset($_SESSION['id'])){
-            $id = $_SESSION["id"];
-            $data["id"]=$id;
-            //hay que obtener todos las carpetas y los archivos
-            $service = $this->container->get('folders_user_service');
-            $folder = $service($data);
-            $id = $folder['id'];
-            $data["id"] = $id;
-            $service = $this->container->get('folders_inside_service');
-            $folders = $service($data);
-            $service = $this->container->get('files_inside_service');
-            $files = $service($data);
-            $menu['dashboard']=true;
+            if($_SESSION['id']!=''){
 
-            return $this->container->get('view')
-                ->render($response, 'dashboard.twig', ['folders'=>$folders, 'id'=>$id, 'files'=>$files, 'menu'=>$menu]);
+                return $response->withStatus(302)->withHeader('Location', '/dashboard');
+            }
         }
-        else{
-            return $this->container->get('view')
-                ->render($response, 'login.twig');
-        }
+        return $this->container->get('view')
+            ->render($response, 'login.twig');
 
     }
     public function loginAction(Request $request, Response $response, array $args)
@@ -66,8 +53,8 @@ class LoginController
 
     public function logoutAction(Request $request, Response $response, array $args){
         $_SESSION['id']='';
-        return $this->container->get('view')
-            ->render($response, 'login.twig');
+        unset($_SESSION);
+        return $response->withStatus(302)->withHeader('Location', '/');
     }
 }
 

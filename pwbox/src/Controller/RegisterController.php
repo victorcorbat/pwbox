@@ -28,6 +28,7 @@ class RegisterController
 
     public function registerAction(Request $request, Response $response, array $args)
     {
+        $exists = false;
         try{
             $data = $request->getParsedBody();
             $service = $this->container->get('post_user_use_case');
@@ -72,7 +73,7 @@ class RegisterController
     }
 
     public function validUsername(String $username){
-        if(strlen($username)<=20){
+        if(strlen($username)<=20 && strlen($username)>0){
             return true;
         }
         return false;

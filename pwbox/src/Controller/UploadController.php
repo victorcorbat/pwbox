@@ -40,14 +40,9 @@ class UploadController
 
         }
 
-        $data["id"] = $args["folder_id"];
-        $id = $data["id"];
-        $service = $this->container->get('folders_inside_service');
-        $folders = $service($data);
-        $service = $this->container->get('files_inside_service');
-        $files = $service($data);
-        return $this->container->get('view')
-            ->render($response, 'dashboard.twig', ['folders'=>$folders, 'id'=>$id, 'files'=>$files, 'menu'=>$menu, 'error'=>$error]);
+        $id = $args["folder_id"];
+
+        return $response->withStatus(302)->withHeader('Location', '/dashboard/'.$id);
 
     }
 

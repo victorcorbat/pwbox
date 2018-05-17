@@ -72,8 +72,7 @@ class DashboardController
                 ->render($response, 'dashboard.twig', ['folders'=>$folders, 'id'=>$id, 'files'=>$files, 'menu'=>$menu, 'mensaje_error'=>$mensaje_error]); //obtener todas las carpetas compar
         }
 
-        return $this->container->get('view')
-            ->render($response, 'login.twig');
+        return $response->withStatus(302)->withHeader('Location', '/');
         // return con el ninguna de las 2--> estan intentando acceder desde la barra
     }
 }

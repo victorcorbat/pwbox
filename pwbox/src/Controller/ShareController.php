@@ -30,13 +30,8 @@ class ShareController
         $menu['dashboard']=true;
 
         $id = $args["folder_id"];
-        $data['id'] = $id;
-        $service = $this->container->get('folders_inside_service');
-        $folders = $service($data);
-        $service = $this->container->get('files_inside_service');
-        $files = $service($data);
-        return $this->container->get('view')
-            ->render($response, 'dashboard.twig', ['folders'=>$folders, 'id'=>$id, 'files'=>$files, 'success'=>$success, 'menu'=>$menu]);
+
+        return $response->withStatus(302)->withHeader('Location', '/dashboard/'.$id);
     }
 }
 

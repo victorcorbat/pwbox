@@ -40,8 +40,8 @@ class ProfileController
         $service = $this->container->get('remove_user_service');
         $service($data);
         $_SESSION['id']='';
-        return $this->container->get('view')
-            ->render($response, 'login.twig');
+        unset($_SESSION);
+        return $response->withStatus(302)->withHeader('Location', '/');
     }
 
     public function updateAction(Request $request, Response $response, array $args)
