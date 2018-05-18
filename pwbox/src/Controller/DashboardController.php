@@ -35,8 +35,17 @@ class DashboardController
         if(isset($args["folder_id"]) && isset($_SESSION["id"])){
             $data["id"] = $args["folder_id"];
             $id = $data["id"];
+
+            $data['folder']=$id;
+            $service = $this->container->get('get_parent_service');
+            $parent = $service($data);
+
             $service = $this->container->get('creator_service');
             $creator = $service($data);
+
+            $service = $this->container->get('folder_name_service');
+            $title = $service($data);
+
             if($creator == $_SESSION['id']){
                 $data["id"] = $args["folder_id"];
                 //mirar si al root puedo acceder
@@ -45,7 +54,7 @@ class DashboardController
                 $service = $this->container->get('files_inside_service');
                 $files = $service($data);
                 return $this->container->get('view')
-                    ->render($response, 'dashboard.twig', ['folders'=>$folders, 'id'=>$id, 'files'=>$files, 'menu'=>$menu, 'mensaje_error'=>$mensaje_error]);
+                    ->render($response, 'dashboard.twig', ['folders'=>$folders, 'id'=>$id, 'title'=>$title, 'parent'=>$parent, 'files'=>$files, 'menu'=>$menu, 'mensaje_error'=>$mensaje_error]);
             }
             else{
                 $mensaje_error = true;
@@ -58,10 +67,12 @@ class DashboardController
         if(isset($_SESSION["id"])){
             $id = $_SESSION["id"];
             $data["id"]=$id;
+            $title = "Carpeta root";
             //hay que obtener todos las carpetas y los archivos
             $service = $this->container->get('folders_user_service');
             $folder = $service($data);
             $id = $folder['id'];
+            $parent = $id;
             $data["id"] = $id;
             $service = $this->container->get('folders_inside_service');
             $folders = $service($data);
@@ -69,10 +80,11 @@ class DashboardController
             $files = $service($data);
 
             return $this->container->get('view')
-                ->render($response, 'dashboard.twig', ['folders'=>$folders, 'id'=>$id, 'files'=>$files, 'menu'=>$menu, 'mensaje_error'=>$mensaje_error]); //obtener todas las carpetas compar
+                ->render($response, 'dashboard.twig', ['folders'=>$folders, 'id'=>$id, 'title'=>$title, 'parent'=>$parent, 'files'=>$files, 'menu'=>$menu, 'mensaje_error'=>$mensaje_error]); //obtener todas las carpetas compar
         }
 
-        return $response->withStatus(302)->withHeader('Location', '/');
+        return $this->container->get('view')
+            ->render($response, 'login.twig');
         // return con el ninguna de las 2--> estan intentando acceder desde la barra
     }
 }

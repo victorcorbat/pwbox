@@ -245,6 +245,16 @@ class DoctrineUserRepository implements UserRepository
         return $folder["fk_parent"];
     }
 
+    public function getFolderName($data){
+        $id_folder = $data["id"];
+        $sql = "SELECT name from folder where id=:id_folder";
+        $stmt = $this->connection->prepare($sql);
+        $stmt->bindValue("id_folder", $id_folder, 'integer');
+        $stmt->execute();
+        $folder = $stmt->fetch();
+        return $folder["name"];
+    }
+
     public function getFolder($data){
         $id_file = $data["file"];
         $sql = "SELECT fk_folder from file where id=:id_file";

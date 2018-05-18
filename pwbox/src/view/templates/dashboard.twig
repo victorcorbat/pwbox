@@ -7,7 +7,11 @@
 
     <div id="content-dash">
 
+        {% set ruta = '/shared/' %}
+
         {% if menu['shared']==false %}
+
+            {% set ruta = '/dashboard/' %}
 
             <div id="buttons">
                 <button class="btn btn-primary" data-toggle="modal" data-target="#addFolder">Añadir carpeta</button>
@@ -32,8 +36,23 @@
             <script>alert("{{ error }}")</script>
         {% endif %}
 
+        <h4>{{ title }}</h4>
+        <br>
+
+        {% if parent != id %}
+            <div id="volver">
+                <a href={{ ruta ~ parent }}><img src = "https://image.flaticon.com/icons/svg/122/122637.svg"></a>
+                <br>
+                <br>
+            </div>
+        {% endif %}
+
         {% if folder is defined %}
             <a href = {{ "/dashboard/" ~ folder["id"] }}> {{ folder["name"] }}</a>
+        {% endif %}
+
+        {% if folders|length==0 and files|length ==0 %}
+            <p><i>Esta carpeta está vacía</i></p>
         {% endif %}
 
         {% if folders is defined %}
@@ -215,9 +234,9 @@
                             <label>Añadir archivo: </label><br/>
                             <input type="file" name="file"/>
                         </p>
-                        <div>
-                            <button id="buttonAdd" class="btn btn-primary" type="submit">Subir archivo</button>
-                        </div>
+                        <di id="#contButton">
+                            <button id="buttonAdd" class="btn btn-primary" type="submit">Subir</button>
+                        </di>
                     </form>
 
                 </div>

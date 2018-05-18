@@ -46,23 +46,36 @@ class SharedController
             }
 
             if($access==true){
+                $data['folder']=$id;
+                $data['id']=$id;
+
+                $service = $this->container->get('folder_name_service');
+                $title = $service($data);
+
+                $title = $title." (Compartida)";
+
+                $service = $this->container->get('get_parent_service');
+                $parent = $service($data);
+
                 $service = $this->container->get('folders_inside_service');
                 $folders = $service($data);
                 $service = $this->container->get('files_inside_service');
                 $files = $service($data);
                 return $this->container->get('view')
-                    ->render($response, 'dashboard.twig', ['folders'=>$folders, 'id'=>$id, 'files'=>$files, 'menu'=>$menu]);
+                    ->render($response, 'dashboard.twig', ['folders'=>$folders, 'parent'=>$parent, 'title'=>$title, 'id'=>$id, 'files'=>$files, 'menu'=>$menu]);
             }
 
         }
         if(isset($_SESSION['id'])){
             $id = $_SESSION['id'];
             $data['id'] = $id;
+            $parent = $id;
             $service = $this->container->get('shared_folder_service');
             $folders = $service($data);
+            $title='Carpetas compartidas';
 
             return $this->container->get('view')
-                ->render($response, 'dashboard.twig', ['folders'=>$folders, 'id'=>$id, 'menu'=>$menu]); //obtener todas las carpetas compartidas y las que están dentro de la root.
+                ->render($response, 'dashboard.twig', ['folders'=>$folders, 'parent'=>$parent, 'title'=>$title, 'id'=>$id, 'menu'=>$menu]); //obtener todas las carpetas compartidas y las que están dentro de la root.
         }
 
         return $this->container->get('view')
