@@ -31,7 +31,28 @@ class ShareController
 
         $id = $args["folder_id"];
 
-        return $response->withStatus(302)->withHeader('Location', '/dashboard/'.$id);
+        $data["id"] = $args["folder_id"];
+
+        $service = $this->container->get('folder_name_service');
+        $title = $service($data);
+
+        $menu['dashboard']=true;
+        $menu['profile']=false;
+        $menu['shared']=false;
+
+        $data['folder']=$id;
+        $service = $this->container->get('get_parent_service');
+        $parent = $service($data);
+
+        //mirar si al root puedo acceder
+        $service = $this->container->get('folders_inside_service');
+        $folders = $service($data);
+        $service = $this->container->get('files_inside_service');
+        $files = $service($data);
+        return $this->container->get('view')
+            ->render($response, 'dashboard.twig', ['folders'=>$folders, 'id'=>$id, 'title'=>$title, 'parent'=>$parent, 'files'=>$files, 'menu'=>$menu, 'success'=>$success]);
+
+
     }
 }
 

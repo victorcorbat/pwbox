@@ -24,6 +24,9 @@ class DashboardController
     public function indexAction(Request $request, Response $response, array $args)
     {
         //$user = $this->container->get('user repo')->findById($_SESSION['user_id']);
+        if(!isset($_SESSION['id'])){
+            return $response->withStatus(302)->withHeader('Location', '/');
+        }
         $data['id'] = $_SESSION['id'];
         $service = $this->container->get('user_service');
         $user = $service($data);

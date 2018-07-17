@@ -28,12 +28,13 @@ class RegisterController
 
     public function registerAction(Request $request, Response $response, array $args)
     {
+        //$errors = '';
         $exists = false;
         try{
             $data = $request->getParsedBody();
             $service = $this->container->get('post_user_use_case');
-            $errors= [];
-            if(isset($data["username"]) && isset($data["email"]) && isset($data["birthdate"]) && isset($data["password"]) && isset($data["confirm_password"])) {
+
+            if(isset($data["username"]) && isset($data["email"]) && isset($data["birthdate"]) && isset($data["password"]) && isset($data["password_confirmation"])) {
 
                 if (!$this->validUsername($data["username"])) {
                     $errors['username'] = "El usuario debe de tener 6-12 carácteres";
@@ -57,11 +58,12 @@ class RegisterController
                 if (!$this->validPassword($data["password"])) {
                     $errors['password'] = "La contraseña debe contener 6-12 carácteres, 1 mayuscula y 1 número";
                 }
-                if (!$this->equalsPasswords($data["password"], $data["confirm_password"])) {
+                if (!$this->equalsPasswords($data["password"], $data["password_confirmation"])) {
                     $errors['passwords'] = "Las contraseñas no coinciden";
                 }
                 if(empty($errors)){
-                    $exists = $service($data);
+                    $id = $service($data);
+                    //obtener id!
                 }
             }
             else{
@@ -74,11 +76,18 @@ class RegisterController
             ->withHeader('Content-Type', 'text/html')
             ->write($e->getMessage());
         }
-        if(!empty($errors) || $exists==false){
+        if(isset($errors) || $id==-1){
+            $exists = true;
+            if(!isset($errors)){
+                return $this->container->get('view')
+                    ->render($response, 'register.twig', ['data'=>$data, 'exists'=>$exists]);
+            }
             return $this->container->get('view')
                 ->render($response, 'register.twig', ['errors'=> $errors, 'data'=>$data, 'exists'=>$exists]);
         }
-        return $response->withStatus(302)->withHeader('Location', '/');
+        //Redirigir a la página de la foto de perfil!
+        return $response->withStatus(302)->withHeader('Location', '/uploadPic/'.$id); //insertar id del usuario para hacer update con la foto de perfil
+        //return $response->withStatus(302)->withHeader('Location', '/');
     }
 
     public function validUsername(String $username){

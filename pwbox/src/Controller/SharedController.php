@@ -24,6 +24,10 @@ class SharedController
     public function indexAction(Request $request, Response $response, array $args)
     {
 
+        if(!isset($_SESSION['id'])){
+            return $response->withStatus(302)->withHeader('Location', '/');
+        }
+
         $menu['dashboard']=false;
         $menu['profile']=false;
         $menu['shared']=true;

@@ -35,6 +35,7 @@ class LoginController
     }
     public function loginAction(Request $request, Response $response, array $args)
     {
+        $_SESSION['id_pic']='';
         try{
             $data = $request->getParsedBody();
             $service = $this->container->get('login_user_service');

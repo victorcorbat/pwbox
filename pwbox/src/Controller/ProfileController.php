@@ -23,6 +23,12 @@ class ProfileController
 
     public function indexAction(Request $request, Response $response, array $args)
     {
+
+        if(!isset($_SESSION['id'])){
+            return $response->withStatus(302)->withHeader('Location', '/');
+        }
+
+
         $menu['dashboard']=false;
         $menu['profile']=true;
         $menu['shared']=false;
@@ -30,8 +36,13 @@ class ProfileController
         $data['id'] = $_SESSION['id'];
         $service = $this->container->get('user_service');
         $user = $service($data);
+
+        $dir =  __DIR__."/uploads/".$user['picture'];
+
+        $image = $dir ;
+
         return $this->container->get('view')
-            ->render($response, 'update.twig', ['user' => $user, 'menu'=>$menu]);
+            ->render($response, 'update.twig', ['user' => $user, 'menu'=>$menu, 'image'=>$image]);
     }
 
     public function removeAction(Request $request, Response $response, array $args)
@@ -50,13 +61,13 @@ class ProfileController
         $data['id'] = $_SESSION['id'];
         $service = $this->container->get('user_service');
         $user = $service($data);
-        if(isset($data["password"]) && isset($data["confirm_pass"])) {
-            if(!$this->validPassword($data["password"])){
+        if(isset($data["pass"]) && isset($data["pass_confirmation"])) {
+            if(!$this->validPassword($data["pass"])){
                 $error['password']="La contraseña debe de tener almenos 1 mayúscula, 1 minúscula y 1 número";
             }
             else{
-                if(!$this->equalsPasswords($data["password"], $data["confirm_pass"])){
-                    $error['passwords']="La contraseña no coinciden";
+                if(!$this->equalsPasswords($data["pass"], $data["pass_confirmation"])){
+                    $error['passwords']="Las contraseñas no coinciden";
                 }
                 else{
                     $user = $this->container->get('update_service')->updatePass($data);
@@ -64,17 +75,12 @@ class ProfileController
             }
         }
         else {
-            if(isset($data["email"]) && isset($data["birthdate"])) {
+            if(isset($data["email"])) {
                 if(!$this->validEmail($data["email"])){
                     $error['email']="El formato del email no es valido";
                 }
                 else{
-                    if(!$this->validBirthdate($data["birthdate"])){
-                        $error['birthdate']="La fecha de nacimiento debe de ser AAAA-MM-DD";
-                    }
-                    else{
-                        $user = $this->container->get('update_service')->updateData($data);
-                    }
+                    $user = $this->container->get('update_service')->updateData($data);
                 }
             }
 

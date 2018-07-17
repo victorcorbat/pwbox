@@ -83,8 +83,23 @@ $app->post(
 );
 
 $app->post(
-    '/upload[/{folder_id}]',
+    '/upload/{folder_id}',
     'pwbox\Controller\UploadController:uploadAction'
+);
+
+$app->post(
+    '/upload',
+    'pwbox\Controller\UploadPicController:uploadAction'
+);
+
+$app->get(
+    '/uploadPic/{user_id}',
+    'pwbox\Controller\UploadPicController:indexAction'
+);
+
+$app->post(
+    '/uploadPic/{user_id}',
+    'pwbox\Controller\UploadPicController:uploadAction'
 );
 
 $app->get(

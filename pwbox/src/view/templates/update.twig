@@ -4,7 +4,6 @@
     <link rel="stylesheet" href="{{ base_url() }}/assets/css/styles.css">
     <link rel="stylesheet" href="{{ base_url() }}/assets/css/styles_update.css">
 
-
     {% if mensaje==true %}
 
         <script>alert('Cambios realizados!')</script>
@@ -13,7 +12,46 @@
 
     <div class="container" id="update">
         <h3 id="login">Actualizar información</h3>
-        <form action="/profile" class="form-inline" method="post">
+
+        {% if user['picture'] is not null %}
+            <div class="form-group">
+
+                <img src={{ user['picture'] }}>
+                <button class="btn btn-primary" data-toggle="modal" data-target="#addFile">Actualizar foto de perfil</button>
+            </div>
+
+        {% else %}
+            <div class="form-group">
+                <button class="btn btn-primary" data-toggle="modal" data-target="#addFile">Subir foto de perfil</button>
+            </div>
+        {% endif %}
+
+        <div class="modal fade" id="addFile" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Subir archivo</h4>
+                    </div>
+
+                    <form id="formAdd" method="post" action={{ "/uploadPic/" ~ user['id'] }}  enctype="multipart/form-data">
+                        <!-- upload of a single file -->
+                        <p>
+                            <label>Añadir archivo: </label><br/>
+                            <input type="file" name="file"/>
+                        </p>
+                        <div id="#contButton">
+                            <button id="buttonAdd" class="btn btn-primary" type="submit">Subir</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <form action="/profile" class="form-inline" method="post" onsubmit="return Validate()" name="vform">
             <label>Actualizar datos</label>
 
             <div class="form-group">
@@ -21,40 +59,46 @@
                     <label class="sr-only" for="email">Correo:</label>
                     <input class="form-control" name="email" id="email" type="email" value={{ user['email'] }}>
                 </div>
+                <div id="email_error" class="val_error"></div>
             </div>
             <br>
 
-            <div class="form-group">
-                <div class="input-group">
-                    <label class="sr-only" for="birthdate">Fecha de nacimiento:</label>
-                    <input class="form-control" name="birthdate" id="birthdate" type="text" value={{ user['birthdate'] }}>
-                </div>
-            </div>
-            <br>
-            <br>
+            {% if error["email"] is defined %}
+                <p>{{ error["email"] }}</p>
+            {% endif %}
 
             <button class="btn btn-primary">Enviar</button>
         </form>
+        <br>
 
-        <form action="/profile" class="form-inline" method="post">
+        <form action="/profile" class="form-inline" method="post" onsubmit="return ValidatePass()" name="vform2">
 
             <label>Actualizar contraseña</label>
 
             <div class="form-group" id="new_pass">
                 <div class="input-group">
-                    <label class="sr-only" for="password">Confirmar contraseña:</label>
-                    <input class="form-control" name="password" type="password" placeholder="Nueva contraseña">
+                    <label class="sr-only" for="password">Nueva contraseña:</label>
+                    <input class="form-control" id="password" name="password" type="password" placeholder="Nueva contraseña">
                 </div>
+                <div id="password_error" class="val_error"></div>
             </div>
+
+            {% if error["password"] is defined %}
+                <p>{{ error["password"] }}</p>
+            {% endif %}
 
             <div class="form-group" id="confirm_new_pass">
                 <div class="input-group">
-                    <label class="sr-only" for="confirm_pass">Confirmar nueva contraseña:</label>
-                    <input class="form-control" name="confirm_pass" type="password" placeholder="Confirma nueva contraseña">
+                    <label class="sr-only" for="password_confirmation">Confirmar nueva contraseña:</label>
+                    <input class="form-control" id="password_confirmation" name="password_confirmation" type="password" placeholder="Confirma nueva contraseña">
                 </div>
+                <div id="password_confirmation_error" class="val_error"></div>
             </div>
 
-            <br>
+            {% if error["passwords"] is defined %}
+                <p>{{ error["passwords"] }}</p>
+            {% endif %}
+
             <br>
 
             <button class="btn btn-primary">Enviar</button>
@@ -105,13 +149,9 @@
             </div>
         </div>
 
-
-
     </div>
 
-{% if error %}
-    {{ error }}
-{% endif %}
+    <script type="text/javascript" src="{{ base_url() }}/assets/js/formUpdate.js"></script>
 
 {% for message in messages %}
     <p>{{ message }}</p>

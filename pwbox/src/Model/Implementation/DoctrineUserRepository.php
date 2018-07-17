@@ -37,7 +37,7 @@ class DoctrineUserRepository implements UserRepository
         $count = $stmt->fetchColumn(0);
 
         if($count>0){
-            return false;
+            return -1;
         }
         else {
 
@@ -73,7 +73,8 @@ class DoctrineUserRepository implements UserRepository
             $stmt->bindValue("fk_folder", $id_folder, 'integer');
             $stmt->execute();
         }
-        return true;
+        $_SESSION['id_pic'] = $id_user;
+        return $id_user;
 
     }
 
@@ -175,12 +176,21 @@ class DoctrineUserRepository implements UserRepository
         return $user[0];
     }
 
+    public function updatePic($data){
+        $filename = $data['filename'];
+        $id = $data['user_id'];
+        $sql = "UPDATE user SET picture = :picture WHERE id= :id";
+        $stmt = $this->connection->prepare($sql);
+        $stmt->bindValue("picture", $filename, 'string');
+        $stmt->bindValue("id", $id, 'integer');
+        $stmt->execute();
+    }
+
     public function updateData(User $user){
 
-        $sql = "UPDATE user SET email= :email, birthdate= :birthdate, updated_at = :updated_at WHERE id= :id";
+        $sql = "UPDATE user SET email= :email, updated_at = :updated_at WHERE id= :id";
         $stmt = $this->connection->prepare($sql);
         $stmt->bindValue("email", $user->getEmail(), 'string');
-        $stmt->bindValue("birthdate", $user->getBirthdate(), 'string');
         $stmt->bindValue("id", $user->getId(), 'integer');
         $stmt->bindValue("updated_at", $user->getUpdatedAt()->format(self::DATE_FORMAT));
         $stmt->execute();
@@ -414,4 +424,6 @@ class DoctrineUserRepository implements UserRepository
 
         return true;
     }
+
+
 }

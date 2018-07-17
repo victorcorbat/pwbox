@@ -1,7 +1,7 @@
 
 .container{
     margin: auto;
-    margin-top: 7%;
+    margin-top: 4%;
     width: 35%;
     padding: 10px;
     padding-bottom:15px;
@@ -18,7 +18,7 @@
 }
 
 .form-inline{
-    margin-bottom: 10%;
+    margin-bottom: 10px;
 }
 
 #form-remove{

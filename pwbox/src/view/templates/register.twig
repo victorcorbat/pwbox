@@ -3,10 +3,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ base_url() }}/assets/css/styles.css">
     <link rel="stylesheet" href="{{ base_url() }}/assets/css/styles_register.css">
+    <script type="text/javascript" src="{{ base_url() }}/assets/js/form.js"></script>
 
     <div class="container">
         <h3 id="login">Regístrate</h3>
-        <form action="/register" class="form-inline" method="post">
+
+        <form action="/register" class="form-inline" method="post" onsubmit="return Validate()" name="vform">
             <div class="form-group">
                 <div class="input-group">
                     <label class="sr-only" for="username">Nombre de usuario:</label>
@@ -16,6 +18,7 @@
                         <input class="form-control" name="username" id="username" type="text" placeholder="Nombre de usuario">
                     {% endif %}
                 </div>
+                <div id="username_error" class="val_error"></div>
             </div>
             <br>
             {% if errors["username"] is defined %}
@@ -31,6 +34,7 @@
                         <input class="form-control" name="email" id="email" type="email" placeholder="Correo electrónico">
                     {% endif %}
                 </div>
+                <div id="email_error" class="val_error"></div>
             </div>
             <br>
 
@@ -47,6 +51,7 @@
                         <input class="form-control" name="birthdate" id="birthdate" type="text" placeholder="Fecha de nacimiento AAAA-MM-DD">
                     {% endif %}
                 </div>
+                <div id="birthdate_error" class="val_error"></div>
             </div>
             <br>
 
@@ -59,6 +64,7 @@
                     <label class="sr-only" for="nombre">Contraseña:</label>
                     <input class="form-control" id="password" name="password" type="password" placeholder="Contraseña">
                 </div>
+                <div id="password_error" class="val_error"></div>
             </div>
             <br>
 
@@ -69,9 +75,11 @@
             <div class="form-group">
                 <div class="input-group">
                     <label class="sr-only" for="nombre">Confirmar contraseña:</label>
-                    <input class="form-control" name="confirm_password" type="password" placeholder="Confirma contraseña">
+                    <input class="form-control" name="password_confirmation" id="password_confirmation" type="password" placeholder="Confirma contraseña">
                 </div>
+                <div id="password_confirmation_error" class="val_error"></div>
             </div>
+            <br>
             <br>
 
             {% if errors["passwords"] is defined %}
@@ -94,6 +102,9 @@
 
         </form>
     </div>
+
+    <script type="text/javascript" src="{{ base_url() }}/assets/js/form.js"></script>
+
 
 {% if error %}
     {{ error }}

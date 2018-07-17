@@ -7,3 +7,11 @@ body{
 #buttonBorrar{
     float:right;
 }
+
+img{
+    width:200px;
+}
+
+.form-group{
+    margin:auto;
+}

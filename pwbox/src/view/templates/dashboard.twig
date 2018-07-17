@@ -3,7 +3,7 @@
 {%  block content %}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ base_url() }}/assets/css/styles_dash.css">
-    <script src="modals.js"></script>
+
 
     <div id="content-dash">
 
@@ -14,6 +14,7 @@
             {% set ruta = '/dashboard/' %}
 
             <div id="buttons">
+
                 <button class="btn btn-primary" data-toggle="modal" data-target="#addFolder">Añadir carpeta</button>
                 <button class="btn btn-primary" data-toggle="modal" data-target="#addFile">Subir archivo</button>
                 <button class="btn btn-primary" data-toggle="modal" data-target="#shareFolder">Compartir carpeta</button>

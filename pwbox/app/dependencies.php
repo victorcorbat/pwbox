@@ -195,6 +195,13 @@ $container['file_creator_service'] = function($container){
     return $useCase;
 };
 
+$container['update_pic_service'] = function($container){
+    $useCase = new pwbox\Model\UseCase\UpdatePicService(
+        $container->get('user_repository') //repositorio
+    );
+    return $useCase;
+};
+
 $container['chain_service'] = function($container){
     $useCase = new pwbox\Model\UseCase\ChainService(
         $container->get('user_repository') //repositorio

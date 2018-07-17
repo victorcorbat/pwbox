@@ -30,7 +30,7 @@ class UpdateService{
             $rawData['id'],
             null,
             $rawData['email'],
-            $rawData['birthdate'],
+            null,
             null,
             null,
             $now
