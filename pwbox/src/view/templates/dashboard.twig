@@ -40,7 +40,7 @@
         <h4>{{ title }}</h4>
         <br>
 
-        {% if parent != id %}
+        {% if parent != id and parent!=0%}
             <div id="volver">
                 <a href={{ ruta ~ parent }}><img src = "https://image.flaticon.com/icons/svg/122/122637.svg"></a>
                 <br>

@@ -57,8 +57,9 @@ class DoctrineUserRepository implements UserRepository
             $user = $stmt->fetchAll()[0];
             $id_user = $user['LAST_INSERT_ID()'];
 
-            $sql = "INSERT INTO folder(name, isroot, fk_parent, cadena) VALUES ('rootfolder', true, 0, '')";
+            $sql = "INSERT INTO folder(name, isroot, fk_parent, creator, cadena) VALUES ('rootfolder', true, 0, :id_user, '')";
             $stmt = $this->connection->prepare($sql);
+            $stmt->bindValue("id_user", $id_user, 'integer');
             $stmt->execute();
 
             $sql = "SELECT LAST_INSERT_ID()";

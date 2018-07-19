@@ -10,18 +10,22 @@
 
     {% endif %}
 
+    {% if error is defined %}
+        <script>alert("{{ error }}")</script>
+    {% endif %}
+
     <div class="container" id="update">
         <h3 id="login">Actualizar información</h3>
 
         {% if user['picture'] is not null %}
             <div class="form-group">
-
-                <img src={{ user['picture'] }}>
+                <img alt="Carga otra imagen o se quedará la que tenias antes" src={{ user['picture'] }}>
                 <button class="btn btn-primary" data-toggle="modal" data-target="#addFile">Actualizar foto de perfil</button>
             </div>
 
         {% else %}
             <div class="form-group">
+                <img src="https://www.telegraph.co.uk/content/dam/men/2016/05/24/Untitled-1_trans_NvBQzQNjv4BqqVzuuqpFlyLIwiB6NTmJwfSVWeZ_vEN7c6bHu2jJnT8.jpg?imwidth=450">
                 <button class="btn btn-primary" data-toggle="modal" data-target="#addFile">Subir foto de perfil</button>
             </div>
         {% endif %}
@@ -39,7 +43,7 @@
                         <!-- upload of a single file -->
                         <p>
                             <label>Añadir archivo: </label><br/>
-                            <input type="file" name="file" accept="image/jpeg"/>
+                            <input type="file" name="file"/>
                         </p>
                         <div id="#contButton">
                             <button id="buttonAdd" class="btn btn-primary" type="submit">Subir</button>

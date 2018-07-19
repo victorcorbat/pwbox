@@ -39,7 +39,7 @@ class UploadPicController
     {
         //RECIBE UN POST CON LA INFO??!
          //devuelve el id del archivo!
-        $_SESSION['id_pic'] = '';
+        $id_pic = $_SESSION['id_pic'];
         $user_id = $args['user_id'];
         $menu['dashboard']=true;
         $directory = $_SERVER['DOCUMENT_ROOT'];
@@ -53,10 +53,57 @@ class UploadPicController
         if ($uploadedFile->getError() === UPLOAD_ERR_OK) {
             $res = $this->moveUploadedFile($directory, $uploadedFile);
         }
+        if(!isset($res) && isset($_SESSION['id_pic']) && $_SESSION['id_pic']!=''){
+            return $response->withStatus(302)->withHeader('Location', '/uploadPic/'.$_SESSION['id_pic']);
+        }
 
-        if($res==null){
-            $error = "Imagen demasiado grande o de formato no válido";
-            return $response->withStatus(302)->withHeader('Location', '/uploadPic/'.$user_id); //pasarle el id de la imagen
+        if(!isset($res) && isset($_SESSION['id'])){
+            return $response->withStatus(302)->withHeader('Location', '/profile');
+        }
+
+        if($res==1 || $res==2){
+
+            if($res==1){
+                $error = "El formato del archivo debe de ser JPG o PNG";
+            }
+
+            if($res==2){
+                $error = "El tamaño del archivo es superior a 500Kb";
+            }
+
+            //El error lo tengo, solo hay que pasarselo!!
+
+            $user_id = $args['user_id'];
+
+            if($_SESSION['id_pic']==$user_id){
+                return $this->container->get('view')
+                    ->render($response, 'profilePic.twig', ['user_id'=>$user_id, 'error'=>$error]); //pasarle el id que está en args!
+            }
+            if($_SESSION['id']==$user_id){
+
+                //conseguir todos los datos!
+
+                if(!isset($_SESSION['id'])){
+                    return $response->withStatus(302)->withHeader('Location', '/');
+                }
+
+
+                $menu['dashboard']=false;
+                $menu['profile']=true;
+                $menu['shared']=false;
+
+                $data['id'] = $_SESSION['id'];
+                $service = $this->container->get('user_service');
+                $user = $service($data);
+
+                return $this->container->get('view')
+                    ->render($response, 'update.twig', ['user' => $user, 'menu'=>$menu, 'error'=>$error]);
+            }
+
+            return $response->withStatus(302)->withHeader('Location', '/'); //enviarle un mensaje diciendo que no puede acceder a esta página
+
+
+            //return $response->withStatus(302)->withHeader('Location', '/uploadPic/'.$user_id); //pasarle el id de la imagen
         }
         else{
             $filename = $res;
@@ -65,11 +112,15 @@ class UploadPicController
             //UPDATE
             $service = $this->container->get('update_pic_service');
             $service($data);
-            return $response->withStatus(302)->withHeader('Location', '/profile'); //pasarle el id de la imagen
+            $_SESSION['id_pic'] = '';
+            if($id_pic!=''){
+                return $response->withStatus(302)->withHeader('Location', '/'); //pasarle el id de la imagen
+            }
+            else{
+                return $response->withStatus(302)->withHeader('Location', '/profile'); //pasarle el id de la imagen
+            }
+
         }
-
-
-
     }
 
     /**
@@ -87,14 +138,14 @@ class UploadPicController
         $filename = sprintf('%s.%0.8s', $basename, $extension);
         $error='';
 
-        if($extension!='jpg' && $extension!='png'){
+        if($extension!='jpg' && $extension!='png' && $extension!='PNG'  && $extension!='JPG'){
             $error = "El formato del archivo no es soportado";
-            return null;
+            return 1;
         }
         else{
-            if($uploadedFile->getSize()>2e6){
-                $error = "El tamaño del archivo es superior a 2Mb";
-                return null;
+            if($uploadedFile->getSize()>500e3){
+                $error = "El tamaño del archivo es superior a 500Kb";
+                return 2;
             }
             else{
                 $uploadedFile->moveTo($directory . DIRECTORY_SEPARATOR . $filename);

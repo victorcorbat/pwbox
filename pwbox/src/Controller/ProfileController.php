@@ -24,10 +24,10 @@ class ProfileController
     public function indexAction(Request $request, Response $response, array $args)
     {
 
-        if(!isset($_SESSION['id'])){
-            return $response->withStatus(302)->withHeader('Location', '/');
+        if($_SESSION['id']==''){
+            return $this->container->get('view')
+                ->render($response, 'error.twig');
         }
-
 
         $menu['dashboard']=false;
         $menu['profile']=true;

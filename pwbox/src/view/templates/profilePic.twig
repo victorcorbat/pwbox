@@ -8,6 +8,10 @@
 
     {% endif %}
 
+    {% if error is defined %}
+        <script>alert("{{ error }}")</script>
+    {% endif %}
+
     <div class="container">
         <h3 id="login">Foto de perfil</h3>
 
